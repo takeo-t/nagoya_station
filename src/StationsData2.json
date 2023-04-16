@@ -1,0 +1,21 @@
+{ "StationsData":[
+    {
+         "id":150101,
+         "lineName": "名古屋本線",
+         "stationNum": "NH37",
+         "stationName": "栄生"
+     },
+     {
+         "id":150102,
+         "lineName": "名古屋本線",
+         "stationNum": "NH40",
+         "stationName": "二ツ杁"
+     },
+     {
+         "id": 150103,
+         "lineName": "名古屋本線",
+         "stationNum": "NH42",
+         "stationName": "須ヶ口"
+     }
+ ]
+ }
