@@ -36,14 +36,15 @@ export const App = () => {
       ).length > 0
     );
     setShowStations(serchedStations);//与える引数はserchedStations　serchedStationsには検索結果の配列が入っている。
-  
   }
+
   return (
     <>
     <h1>名鉄名古屋駅乗車位置検索</h1>
     <div>
         <h4>降りる駅を入力</h4>
         <input type="text" value={inputValue} placeholder="駅名を入力" onChange={handleInputChange}/>
+        <button onClick={search} >検索</button>
       </div>
     {showStations.map((station, index) => {
       if(showStations.length >= 2){
