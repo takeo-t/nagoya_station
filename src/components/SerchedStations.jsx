@@ -1,15 +1,30 @@
 import React from "react";
 
 export const SerchedStations = (props) => {
-    const { inputValue, onChange} = props;
+    const { inputValue, onChange, showStations, } = props;
     return (
-   <>    
-   {/*フリーキーワード検索フォーム */}
-   <div>
-      <h3>あなたの向かう駅は？</h3>
-      <input type="text" placeholder="駅名を入力" value={inputValue} onChange={onChange}/>
-      {/* <button onClick={SerchedStations}>検索</button> */}
-   </div>
-   </>
+        <>
+        <div>
+            <h4>降りる駅を入力</h4>
+            <input type="text" value={inputValue} placeholder="駅名を入力" onChange={onChange}/>
+          </div>
+        {showStations.map((station, index) => {
+          if(showStations.length >= 2){
+          return null;
+          } else {
+          const { stationName,stationNum,trackNum,position,positionColor} = station;
+          return (
+            <div key={index}>
+              <p>{stationName}駅（{stationNum}）へ向かう時の並び位置</p>
+              <ul>
+                <li>{trackNum}番ホーム</li>
+                <li>{position}</li>
+                <li>{positionColor}色乗車位置</li>
+              </ul>
+            </div>
+          )
+          }
+        })}
+      </>
     );
 };
