@@ -1,12 +1,14 @@
 import React from "react";
 
 export const SerchedStations = (props) => {
-    const { inputValue, onChange, showStations, } = props;
+    const { inputValue, onChange, showStations, search, clear} = props;
     return (
         <>
         <div>
             <h4>降りる駅を入力</h4>
             <input type="text" value={inputValue} placeholder="駅名を入力" onChange={onChange}/>
+            <button onClick={search}>検索</button>
+            <button onClick={clear}>クリア</button>
           </div>
         {showStations.map((station, index) => {
           if(showStations.length >= 2){

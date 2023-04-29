@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { SerchedStations } from './components/SerchedStations';
-// import { ShowStation } from './components/ShowStation';
 import StationsData from './StationsData.json';
 
 
@@ -10,17 +9,17 @@ export const App = () => {
 
   const [ showStations, setShowStations ] = useState(stations);//初期値は配列stations
   const [ inputValue, setInputValue ] = useState('');
- 
   //検索欄への入力値をハンドリング
   const handleInputChange = (event) => {
-    setInputValue(event.target.value)
+    setInputValue(event.target.value);
     }
+  const clear = () => {
+      return (setInputValue(''));
+     }
 
-  const searchButton = (event)=> {
-    search(event.target.value)
-  };
   //検索欄への入力値での絞り込み
      const search = (value) => {//検索ボタンが押された際のみsearch関数が呼ばれる必要がある。
+      console.log(value);
     //検索欄への入力がからの場合は早期return
     if (value === ""){
       setShowStations(stations);
@@ -40,7 +39,7 @@ export const App = () => {
     setShowStations(serchedStations);//与える引数はserchedStations　serchedStationsには検索結果の配列が入っている。
       };
   };
-  
+ 
 
   return (
     <>
@@ -49,8 +48,9 @@ export const App = () => {
     inputValue={inputValue}
     onChange={handleInputChange}
     showStations={showStations}
+    search={() => search(inputValue)}
+    clear={clear}
     />
-     <button onClick={searchButton}>検索</button>
     </>
   );
   }
