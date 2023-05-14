@@ -2010,36 +2010,6 @@
             "color": "yellow"
         },
         {
-            "id": "430602",
-            "lineName": "常滑線・空港線",
-            "stationNum": "NH33",
-            "stationName": "神宮前",
-            "trackNum": "4",
-            "position": "河和・内海・中部国際空港方面方面",
-            "positionColor": "緑",
-            "color": "green"
-        },
-        {
-            "id": "430603",
-            "lineName": "常滑線・空港線",
-            "stationNum": "TA01",
-            "stationName": "豊田本町",
-            "trackNum": "4",
-            "position": "河和・内海・中部国際空港方面方面",
-            "positionColor": "緑",
-            "color": "green"
-        },
-        {
-            "id": "430604",
-            "lineName": "常滑線・空港線",
-            "stationNum": "TA02",
-            "stationName": "道徳",
-            "trackNum": "4",
-            "position": "河和・内海・中部国際空港方面方面",
-            "positionColor": "緑",
-            "color": "green"
-        },
-        {
             "id": "430605",
             "lineName": "常滑線・空港線",
             "stationNum": "TA03",

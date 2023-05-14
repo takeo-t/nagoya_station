@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { SerchedStations } from './components/SerchedStations';
 import StationsData from './StationsData.json';
-
+import App2 from './App2.module.scss';
+// import { ShowStation } from './components/ShowStation';
 
 const stations = StationsData.StationsData;
 
@@ -43,7 +44,7 @@ export const App = () => {
 
   return (
     <>
-    <h1>名鉄名古屋駅乗車位置検索</h1>
+    <h1 className={App2.header}>名鉄名古屋駅乗車位置検索</h1>
     <SerchedStations
     inputValue={inputValue}
     onChange={handleInputChange}
@@ -51,6 +52,7 @@ export const App = () => {
     search={() => search(inputValue)}
     clear={clear}
     />
+    {/* <ShowStation /> */}
     </>
   );
   }
