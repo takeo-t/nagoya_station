@@ -20,7 +20,7 @@ export const App = () => {
     //検索欄への入力値での絞り込み
     const search = (value) => {//検索ボタンが押された際のみsearch関数が呼ばれる。
       //検索欄への入力がからの場合は早期return
-      if (value !== stations){
+      if (value !== stations){ //←ここで配列stationsと合致しない値だったら「存在しない駅」と表示したい
         setShowStations(stations);
           return(
             <p>存在しない駅</p>
