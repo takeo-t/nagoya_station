@@ -6,6 +6,7 @@ import App2 from './App2.module.scss';
 
 const stations = StationsData.StationsData;
 
+
 export const App = () => {
 
   const [ showStations, setShowStations ] = useState(stations);//初期値は配列stations
@@ -20,11 +21,9 @@ export const App = () => {
     //検索欄への入力値での絞り込み
     const search = (value) => {//検索ボタンが押された際のみsearch関数が呼ばれる。
       //検索欄への入力がからの場合は早期return
-      if (value !== stations){ //←ここで配列stationsと合致しない値だったら「存在しない駅」と表示したい
+      if(value === ""){
         setShowStations(stations);
-          return(
-            <p>存在しない駅</p>
-          );
+          return
       } else {
       const serchedStations = stations.filter(//フィルター関数は条件に一致する値のみ配列の中から取り出すことができる
         (station) => Object.values(station).filter(
@@ -38,8 +37,8 @@ export const App = () => {
       );
       setShowStations(serchedStations);//与える引数はserchedStations　serchedStationsには検索結果の配列が入っている。
         };
+        console.log(showStations);
     };
-
   return (
     <>
     <h1 className={App2.header}>名鉄名古屋駅乗車位置検索</h1>
@@ -50,6 +49,7 @@ export const App = () => {
     search={() => search(inputValue)}
     clear={clear}
     />
+    {showStations.length === 0 && (<p style ={{color: 'red'}}>名鉄線以外の駅は非対応です。</p>)}
     </>
   );
   }
