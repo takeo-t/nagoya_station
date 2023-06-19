@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { SerchedStations } from './components/SerchedStations';
+import { SearchedStations } from './components/SearchedStations';
 import StationsData from './StationsData.json';
 import App2 from './App2.module.scss';
-// import { ShowStation } from './components/ShowStation';
 
 const stations = StationsData.StationsData;
 
@@ -16,7 +15,7 @@ export const App = () => {
     setInputValue(event.target.value);
     }
   const clear = () => {
-      return (setInputValue(''));
+      (setInputValue(''));
      }
     //検索欄への入力値での絞り込み
     const search = (value) => {//検索ボタンが押された際のみsearch関数が呼ばれる。
@@ -25,24 +24,20 @@ export const App = () => {
         setShowStations(stations);
           return
       } else {
-      const serchedStations = stations.filter(//フィルター関数は条件に一致する値のみ配列の中から取り出すことができる
-        (station) => Object.values(station).filter(
-          (item) =>
-          item !== undefined &&
-          item !== null &&
-          item === station.stationName &&
-          item === value &&
-          item.toUpperCase().indexOf(value.toUpperCase()) !== -1
-        ).length > 0
-      );
-      setShowStations(serchedStations);//与える引数はserchedStations　serchedStationsには検索結果の配列が入っている。
+        const searchedStations = stations.filter(
+          (station) =>
+            station.stationName !== undefined &&
+            station.stationName !== null &&
+            station.stationName.toUpperCase().indexOf(value.toUpperCase()) !== -1
+        );
+      setShowStations(searchedStations);//与える引数はserchedStations　serchedStationsには検索結果の配列が入っている。
         };
         console.log(showStations);
     };
   return (
     <>
     <h1 className={App2.header}>名鉄名古屋駅乗車位置検索</h1>
-    <SerchedStations
+    <SearchedStations
     inputValue={inputValue}
     onChange={handleInputChange}
     showStations={showStations}

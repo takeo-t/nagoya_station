@@ -1,17 +1,17 @@
 import React from "react";
-import scssSerchedStations from './scssSerchedStations.module.scss';
+import scssSearchedStations from './scssSearchedStations.module.scss';
 import scssShowStation from './scssShowStation.module.scss';
 // import { ShowStation } from "./ShowStation";
 
-export const SerchedStations = (props) => {
+export const SearchedStations = (props) => {
     const { inputValue, onChange, showStations, search, clear} = props;
     return (
         <>
         <div>
-            <h4 className={scssSerchedStations.title}>降りる駅を入力してください</h4>
-            <input id={scssSerchedStations.search} type="text" value={inputValue} placeholder="駅名を入力" onChange={onChange}/>
-            <button className={scssSerchedStations.searchButton}onClick={search}>検索</button>
-            <button className={scssSerchedStations.searchButton}onClick={clear}>クリア</button>
+            <h4 className={scssSearchedStations.title}>降りる駅を入力してください</h4>
+            <input id={scssSearchedStations.search} type="text" value={inputValue} placeholder="駅名を入力" onChange={onChange}/>
+            <button className={scssSearchedStations.searchButton}onClick={search}>検索</button>
+            <button className={scssSearchedStations.searchButton}onClick={clear}>クリア</button>
           </div>
         {showStations.map((station, index) => {
           if(showStations.length >= 2){
@@ -28,8 +28,8 @@ export const SerchedStations = (props) => {
 
           return (
             <>
-             <div id={scssSerchedStations.stationArea}key={index}>
-              <p id={scssSerchedStations.stationAreaName}>{stationName}駅（{stationNum}）へ向かう時の並び位置</p>
+             <div id={scssSearchedStations.stationArea}key={index}>
+              <p id={scssSearchedStations.stationAreaName}>{stationName}駅（{stationNum}）へ向かう時の並び位置</p>
 
             {stationsId.search(41) !== -1 &&
             (<div>
